@@ -3,10 +3,10 @@ import * as React from 'react'
 import Layout from '../components/layout'
 
 // Step 2: Define your component
-const KonzertenPage = () => {
+const KonzertePage = () => {
   return (
     <main>
-      <Layout pageTitle="konzerten">
+      <Layout pageTitle="konzerte">
       	2025<br />
       	<p><b>Thursday 21 August</b><br />
        	7pm<br /><br />
@@ -23,7 +23,7 @@ const KonzertenPage = () => {
   )
 }
 
-export const Head = () => <title>konzerten</title>
+export const Head = () => <title>konzerte</title>
 
 // Step 3: Export your component
-export default KonzertenPage
+export default KonzertePage

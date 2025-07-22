@@ -2,13 +2,12 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 
-
 // Step 2: Define your component
 const IndexPage = () => {
   return (
     <Layout pageTitle="kantione">
         a new concert series curated and organised by <b>Eleni Poulou</b>
-        <br /><br /> 
+        <br /><br />
         <b>kantione</b> was launched in 2024 to present new forms of classical music at <b>Haus am Waldsee</b> in Berlin-Zehlendorf
         <br /><br />
         each concert features new combinations of artists, premiering their work in an intimate setting
@@ -36,7 +35,7 @@ const IndexPage = () => {
 	 S1 Mexikoplatz
 	 <br /><br />
 	 <a href="https://hausamwaldsee.de/" target="_blank" rel="noopener noreferrer">hausamwaldsee.de</a>
-	<br /><br /><br /><br />	
+	<br /><br /><br /><br />
         </Layout>
   )
 }
