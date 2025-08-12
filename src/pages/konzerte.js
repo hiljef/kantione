@@ -7,7 +7,14 @@ const KonzertePage = () => {
   return (
     <main>
       <Layout pageTitle="konzerte">
-      	2025<br />
+      	<b>2025</b><br />
+      	<p>Tickets (16/12 euros) are available <a href="https://hausamwaldsee.de/tickets/" target="blank">online</a> or at the box office.
+      	<br />
+      	Limited availability!
+      	<br /><br />
+	The concerts take place outside in the sculpture park, or in the garden hall in case of rain. Both venues are
+accessible.
+	</p>
       	<p><b>Thursday 21 August</b><br />
        	7pm<br /><br />
        	<b>Wabi Sabi Barock</b>
@@ -16,6 +23,27 @@ const KonzertePage = () => {
 	Martin Heinze – double bass
 	<br /><br />
 	The duo Martin Heinze and Hilary Jeffery interpret early music in a distinctive, open style, drawing on the 					Japanese concept of <i>Wabi Sabi</i> - a notion that values imperfection, asymmetry, roughness, irregularity, and simplicity. In this concert, they present new versions of Orlando di Lasso’s <i>Cantione Sine Textu</i> together with a revised version of their signature piece <i>Wabi Sabi à la Ortiz</i>.
+	<br /><br />
+       </p>
+       <p><b>Thursday 4 September</b><br />
+       	7pm<br /><br />
+       	<b>Arend & Gröger</b>
+       	<br /><br />
+	Heidi Gröger – viola da gamba<br />
+	Andreas Arend – lyra polyversalis
+	<br /><br />
+	In this concert, Heidi Gröger and Andreas Arend explore the fluid boundaries between Baroque and contemporary music with two rare string instruments: the viola da gamba and the lyra polyversalis. Both instruments share similar
+characteristics but originate from different centuries. Their programme includes studies and improvisations by Marin Marais, Georg Philipp Telemann, Andreas Arend and Johann Sebastian Bach.
+	<br /><br />
+       </p>
+       <p><b>Thursday 16 October</b><br />
+       	7pm<br /><br />
+       	<b>Sinclaire & Lahav</b>
+       	<br /><br />
+	Adam Sinclaire – flute<br />
+	Hilà Lahav – recorder, nay, electronics
+	<br /><br />
+	Adam Sinclaire and Hilà Lahav present works by Uccelini, Bach and Tanburi Cemil Bey with a repertoire ranging from medieval dance music and laments to Baroque and classical duets and modern soundscapes from Western Europe, Andalusia, the Balkans and the Levant.
 	<br /><br />
        </p>
       </Layout>
