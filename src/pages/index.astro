@@ -1,4 +1,8 @@
 ---
+import Navigation from '../components/Navigation.astro';
+
+import Footer from '../components/Footer.astro';
+
 import '../styles/global.css';
 
 const pageTitle = "kantione";
@@ -16,9 +20,7 @@ const pageTitle = "kantione";
 	<body>
 		<div class="div1">
 		
-		<a href="/">kantione</a>&nbsp;
-		<a href="/konzerte/">konzerte</a>&nbsp;
-		<a href="/archiv/">archiv</a>
+		<Navigation />
 		
 		<br />
 		
@@ -53,6 +55,7 @@ const pageTitle = "kantione";
 	 <br /><br />
 	 <a href="https://hausamwaldsee.de/" target="_blank" rel="noopener noreferrer">hausamwaldsee.de</a>
 	<br /><br />
-	</div>
+		<Footer />
+		</div>
 	</body>
 </html>

@@ -1,8 +1,11 @@
 ---
+import Navigation from '../components/Navigation.astro';
+
+import Footer from '../components/Footer.astro';
+
 import '../styles/global.css';
 
-const pageTitle = "archiv";
-
+const pageTitle = "kantione";
 ---
 
 <html lang="en">
@@ -16,9 +19,7 @@ const pageTitle = "archiv";
 	<body>
 		<div class="div1">
 		
-		<a href="/">kantione</a>&nbsp;
-		<a href="/konzerte/">konzerte</a>&nbsp;
-		<a href="/archiv/">archiv</a>
+		<Navigation />
 		
 		<br />
 		
@@ -68,5 +69,6 @@ const pageTitle = "archiv";
 	<br /><br />
 	Claudio Puntin and Gerdur Gunnarsdóttir create poetic miniatures combining melodic clarity, complex structures and sonic expansiveness. Inspired by the lights and atmosphere of the north, they create music that captures silence and warmth while leaving room for improvisational elements.
 	<br /><br /><br /><br />
+		<Footer />
 	</body>
 </html>

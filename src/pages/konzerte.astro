@@ -1,7 +1,11 @@
 ---
-const pageTitle = "konzerte";
+import Navigation from '../components/Navigation.astro';
+
+import Footer from '../components/Footer.astro';
 
 import '../styles/global.css';
+
+const pageTitle = "kantione";
 ---
 
 <html lang="en">
@@ -15,9 +19,7 @@ import '../styles/global.css';
 	<body>
 		<div class="div1">
 		
-		<a href="/">kantione</a>&nbsp;
-		<a href="/konzerte/">konzerte</a>&nbsp;
-		<a href="/archiv/">archiv</a>
+		<Navigation />
 		
 		<br />
 		
@@ -61,5 +63,6 @@ characteristics but originate from different centuries. Their programme includes
 	Adam Sinclaire and Hilà Lahav present works by Uccelini, Bach and Tanburi Cemil Bey with a repertoire ranging from medieval dance music and laments to Baroque and classical duets and modern soundscapes from Western Europe, Andalusia, the Balkans and the Levant.
 	<br /><br />
        </p>
+           <Footer />
 	</body>
 </html>
