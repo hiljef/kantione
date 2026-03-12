@@ -1,5 +1,5 @@
 {
-  "name": "kantione",
+  "name": "kantione_astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.0.3"
+    "astro": "^5.13.2"
   }
 }
