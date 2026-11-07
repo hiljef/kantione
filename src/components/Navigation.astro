@@ -1,5 +1,127 @@
 ---
 ---
-<a href="/">kantione</a>
-<a href="/konzerte/">konzerte</a>
-<a href="/archiv/">archiv</a>
+<nav class="navigation" data-navigation aria-label="Main navigation">
+	<button
+		class="navigation-toggle"
+		type="button"
+		aria-label="Toggle navigation menu"
+		aria-controls="primary-navigation"
+		aria-expanded="false"
+	>
+		<span class="navigation-toggle-line"></span>
+		<span class="navigation-toggle-line"></span>
+	</button>
+	<div class="navigation-links" id="primary-navigation">
+		<a href="/">kantione</a>
+		<a href="/concerts/">concerts</a>
+		<a href="/archive/">archive</a>
+	</div>
+</nav>
+
+<script>
+	document.querySelectorAll<HTMLElement>('[data-navigation]').forEach((navigation) => {
+		const toggle = navigation.querySelector<HTMLButtonElement>('.navigation-toggle');
+
+		if (!toggle) return;
+
+		navigation.classList.add('mobile-navigation-enabled');
+
+		const closeMenu = () => {
+			navigation.classList.remove('is-open');
+			toggle.setAttribute('aria-expanded', 'false');
+		};
+
+		toggle.addEventListener('click', () => {
+			const isOpen = navigation.classList.toggle('is-open');
+			toggle.setAttribute('aria-expanded', String(isOpen));
+		});
+
+		navigation.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', closeMenu);
+		});
+
+		navigation.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape') closeMenu();
+		});
+	});
+</script>
+
+<style>
+	.navigation {
+		display: flex;
+		align-items: center;
+	}
+
+	.navigation-links {
+		display: flex;
+		gap: 0.75rem;
+	}
+
+	.navigation-toggle {
+		display: none;
+	}
+
+	@media (max-width: 600px) {
+		.navigation {
+			position: relative;
+			justify-content: flex-end;
+		}
+
+		.navigation-toggle {
+			display: none;
+			width: 2.75rem;
+			height: 2.75rem;
+			padding: 0.65rem;
+			border: 1px solid purple;
+			border-radius: 0.4rem;
+			background: transparent;
+			cursor: pointer;
+			flex-direction: column;
+			justify-content: center;
+			gap: 0.35rem;
+		}
+
+		.mobile-navigation-enabled .navigation-toggle {
+			display: flex;
+		}
+
+		.navigation-toggle-line {
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: purple;
+			transition: transform 150ms ease;
+		}
+
+		.is-open .navigation-toggle-line:first-child {
+			transform: translateY(3px) rotate(45deg);
+		}
+
+		.is-open .navigation-toggle-line:last-child {
+			transform: translateY(-3px) rotate(-45deg);
+		}
+
+		.navigation-links {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			padding: 0.75rem;
+			border: 1px solid purple;
+			border-radius: 0.4rem;
+			background-color: #F2AFAD;
+		}
+
+		.mobile-navigation-enabled .navigation-links {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			z-index: 1;
+			min-width: 10rem;
+		}
+
+		.mobile-navigation-enabled.is-open .navigation-links {
+			display: flex;
+		}
+	}
+</style>
