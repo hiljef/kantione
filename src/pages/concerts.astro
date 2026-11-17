@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Head from '../components/Head.astro';
 import '../styles/global.css';
 
 const pageTitle = "Kantione";
@@ -8,11 +9,7 @@ const pageTitle = "Kantione";
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<Head title="Concerts | Kantione" description="Explore Kantione concerts at Haus am Waldsee in Berlin." path="/concerts/" />
 	</head>
 	<body>
 		<div class="div1">

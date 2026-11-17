@@ -1,0 +1,18 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	path: string;
+}
+
+const { title, description, path } = Astro.props;
+---
+
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={`https://kanti.one${path}`} />
+{path === '/' && <link rel="alternate" type="text/markdown" href="/index.md" title="Kantione homepage in Markdown" />}

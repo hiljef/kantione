@@ -1,10 +1,4 @@
-# Astro Starter Kit: Minimal
-
-```sh
-npm create astro@latest -- --template minimal
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# Kantione
 
 ## 🚀 Project Structure
 
@@ -41,3 +35,24 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Agent-facing resources
+
+The static build includes `robots.txt`, `sitemap.xml`, `llms.txt` and a Markdown
+homepage at `/index.md`. Keep the sitemap and Markdown homepage in sync with
+the HTML pages when content changes. The structured data identifies Haus am
+Waldsee and Eleni Poulou separately from the Kantione concert series; the
+venue's legal information is not a statement of Kantione's own terms.
+
+On Apache, deploy the generated `.htaccess` and `index.var` along with the rest
+of `dist/`. Content negotiation requires `mod_negotiation`, `mod_mime`,
+`mod_dir`, and permission to use the `.htaccess` directives; the Link header
+also requires `mod_headers`. A request for `/` with `Accept: text/markdown`
+then receives the Markdown homepage, with `Vary: Accept` for caches. Astro's
+static preview and other hosting platforms do not apply Apache configuration:
+configure their equivalent content negotiation and Link header separately.
+Verify both responses on the deployed host after deployment.
+
+The site registers a read-only WebMCP tool in browsers that support the API.
+It does not currently run an HTTP MCP server, so it does not publish an MCP
+server card. A card should only be added once an actual MCP endpoint exists.

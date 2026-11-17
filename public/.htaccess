@@ -1,0 +1,7 @@
+DirectoryIndex index.var index.html
+AddHandler type-map .var
+AddType text/markdown .md
+
+<IfModule mod_headers.c>
+  Header merge Link "</llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+</IfModule>

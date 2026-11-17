@@ -1,25 +1,83 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Head from '../components/Head.astro';
 
 import '../styles/global.css';
 
 const pageTitle = "Kantione";
+const structuredData = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"@id": "https://hausamwaldsee.de/#organization",
+			name: "Haus am Waldsee",
+			url: "https://hausamwaldsee.de/",
+			sameAs: ["https://www.instagram.com/hausamwaldsee"],
+			address: {
+				"@type": "PostalAddress",
+				streetAddress: "Argentinische Allee 30",
+				postalCode: "14163",
+				addressLocality: "Berlin",
+				addressCountry: "DE"
+			}
+		},
+		{
+			"@type": "Place",
+			"@id": "https://kanti.one/#venue",
+			name: "Haus am Waldsee",
+			address: {
+				"@type": "PostalAddress",
+				streetAddress: "Argentinische Allee 30",
+				postalCode: "14163",
+				addressLocality: "Berlin",
+				addressCountry: "DE"
+			}
+		},
+		{
+			"@type": "Person",
+			"@id": "https://kanti.one/#curator",
+			name: "Eleni Poulou",
+			sameAs: ["https://www.instagram.com/eleni.poulou"]
+		},
+		{
+			"@type": "CreativeWork",
+			"@id": "https://kanti.one/#series",
+			name: "Kantione",
+			description: "A concert series exploring connections between early and contemporary music.",
+			creator: { "@id": "https://kanti.one/#curator" },
+			locationCreated: { "@id": "https://kanti.one/#venue" }
+		},
+		{
+			"@type": "WebSite",
+			"@id": "https://kanti.one/#website",
+			name: "Kantione",
+			url: "https://kanti.one/",
+			about: { "@id": "https://kanti.one/#series" }
+		},
+		{
+			"@type": "WebPage",
+			"@id": "https://kanti.one/#webpage",
+			url: "https://kanti.one/",
+			name: "Kantione",
+			isPartOf: { "@id": "https://kanti.one/#website" },
+			about: { "@id": "https://kanti.one/#series" }
+		}
+	]
+};
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<Head title={pageTitle} description="Kantione is a concert series curated by Eleni Poulou, exploring early and contemporary music at Haus am Waldsee in Berlin." path="/" />
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 	</head>
 	
 	<body>
 		<div class="div1">
 		<Header title={pageTitle} />
-		 Concert series curated by <b>Eleni Poulou</b> 
+		 <span id="about">Concert series curated by <b>Eleni Poulou</b></span>
          <br /><br />
          Since 2024 <b>Kantione</b> presents new forms of classical music at <b>Haus am Waldsee</b>.
 		 <br /><br />

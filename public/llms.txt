@@ -1,0 +1,16 @@
+# Kantione
+
+> Kantione is a concert series curated by Eleni Poulou at Haus am Waldsee in Berlin, exploring connections between early and contemporary music.
+
+## Pages
+
+- [About Kantione and visitor information](https://kanti.one/)
+- [Concerts](https://kanti.one/concerts/)
+- [Past concerts](https://kanti.one/archive/)
+- [Homepage in Markdown](https://kanti.one/index.md)
+- [Haus am Waldsee legal information](https://hausamwaldsee.de/impressum/)
+
+## Contact
+
+For accessibility questions, contact [info@hausamwaldsee.de](mailto:info@hausamwaldsee.de).
+Tickets are available [online](https://hausamwaldsee.de/tickets/) or at the box office.
