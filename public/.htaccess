@@ -1,5 +1,4 @@
-DirectoryIndex index.var index.html
-AddHandler type-map .var
+DirectoryIndex index.html
 AddType text/markdown .md
 
 <IfModule mod_headers.c>

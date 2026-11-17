@@ -1,9 +1,16 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { runInNewContext } from 'node:vm';
 
 const read = (path) => readFile(new URL(`../dist/${path}`, import.meta.url), 'utf8');
+
+test('the deployed homepage defaults to HTML instead of a type map', async () => {
+  const config = await read('.htaccess');
+  assert.match(config, /^DirectoryIndex\s+index\.html\s*$/m);
+  assert.doesNotMatch(config, /^\s*AddHandler\s+type-map\b/m);
+  await assert.rejects(access(new URL('../dist/index.var', import.meta.url)), { code: 'ENOENT' });
+});
 
 test('discovery files describe the published pages', async () => {
   const [robots, sitemap, llms] = await Promise.all([

@@ -44,14 +44,13 @@ the HTML pages when content changes. The structured data identifies Haus am
 Waldsee and Eleni Poulou separately from the Kantione concert series; the
 venue's legal information is not a statement of Kantione's own terms.
 
-On Apache, deploy the generated `.htaccess` and `index.var` along with the rest
-of `dist/`. Content negotiation requires `mod_negotiation`, `mod_mime`,
-`mod_dir`, and permission to use the `.htaccess` directives; the Link header
-also requires `mod_headers`. A request for `/` with `Accept: text/markdown`
-then receives the Markdown homepage, with `Vary: Accept` for caches. Astro's
-static preview and other hosting platforms do not apply Apache configuration:
-configure their equivalent content negotiation and Link header separately.
-Verify both responses on the deployed host after deployment.
+On Apache, deploy the generated `.htaccess` along with the rest of `dist/`.
+The homepage is served as HTML; the Markdown version is available directly at
+`/index.md`. Remove any previously deployed `index.var` file. The `.htaccess`
+directives require `mod_mime`, `mod_dir`, and permission to use them; the Link
+header also requires `mod_headers`. Astro's static preview and other hosting
+platforms do not apply Apache configuration. Verify the homepage and Markdown
+page on the deployed host after deployment.
 
 The site registers a read-only WebMCP tool in browsers that support the API.
 It does not currently run an HTTP MCP server, so it does not publish an MCP
